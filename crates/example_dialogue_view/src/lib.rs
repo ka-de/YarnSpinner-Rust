@@ -47,10 +47,7 @@ pub use updating::SpeakerChangeEvent;
 
 pub mod prelude {
     //! Everything you need to get starting using this example Yarn Spinner dialogue view.
-    pub use crate::{
-        ExampleYarnSpinnerDialogueViewPlugin, ExampleYarnSpinnerDialogueViewSystemSet,
-        SpeakerChangeEvent,
-    };
+    pub use crate::{ ExampleYarnSpinnerDialogueViewPlugin, ExampleYarnSpinnerDialogueViewSystemSet, SpeakerChangeEvent };
 }
 
 /// The plugin registering all systems of the dialogue view.
@@ -78,10 +75,7 @@ mod updating;
 
 impl Plugin for ExampleYarnSpinnerDialogueViewPlugin {
     fn build(&self, app: &mut App) {
-        assert!(
-            app.is_plugin_added::<YarnSpinnerPlugin>(),
-            "YarnSpinnerPlugin must be added before ExampleYarnSpinnerDialogueViewPlugin"
-        );
+        assert!(app.is_plugin_added::<YarnSpinnerPlugin>(), "YarnSpinnerPlugin must be added before ExampleYarnSpinnerDialogueViewPlugin");
         app.add_plugins(assets::ui_assets_plugin)
             .add_plugins(setup::ui_setup_plugin)
             .add_plugins(updating::ui_updating_plugin)
